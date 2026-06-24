@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    int count = 1;
+    for (int i = 0; str[i]; i++) {
+        if (str[i] == str[i+1]) {
+            count++;
+        } else {
+            printf("%c%d", str[i], count);
+            count = 1;
+        }
+    }
+    printf("\n");
+    return 0;
+}

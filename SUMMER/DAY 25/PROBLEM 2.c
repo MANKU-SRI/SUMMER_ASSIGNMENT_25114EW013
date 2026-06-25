@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[100], str2[100];
+    int freq[256] = {0};
+
+    printf("Enter first string: ");
+    gets(str1);
+    printf("Enter second string: ");
+    gets(str2);
+
+    for(int i=0; str1[i]; i++)
+        freq[(unsigned char)str1[i]] = 1;
+
+    printf("Common characters: ");
+    for(int i=0; str2[i]; i++) {
+        if(freq[(unsigned char)str2[i]] == 1) {
+            printf("%c ", str2[i]);
+            freq[(unsigned char)str2[i]] = -1; // avoid duplicates
+        }
+    }
+    return 0;
+}
